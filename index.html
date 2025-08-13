@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galeri Publik</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="firebase-config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header id="siteHeader" class="app-header" role="banner">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img id="siteLogo" src="logo.png" alt="logo" class="logo-small" />
+      <div>
+        <div id="siteTitle" class="site-title">Galeri Publik</div>
+        <div id="siteSubtitle" class="small muted">Simpan & bagikan foto</div>
+      </div>
+    </div>
+    </header>
+
+  <main class="wrap" role="main">
+    <div id="carousel" class="carousel" aria-label="Carousel gambar"></div>
+
+    <section style="margin-top:12px">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div class="small muted">Album</div>
+      </div>
+      <div id="albumsRow" class="albums-row" style="margin-top:8px"></div>
+    </section>
+
+    <div style="display:flex;align-items:center;gap:8px;margin-top:12px">
+      <select id="albumFilter"><option value="__all">Semua Album</option></select>
+      <div id="filterInfo" class="small muted">Tampilkan semua</div>
+    </div>
+
+    <section id="feed" class="feed-grid" aria-live="polite" aria-busy="false"></section>
+
+    <div id="loading" class="center small muted" style="padding:12px;display:none">Memuat...</div>
+    <div id="endOfFeed" class="center small muted" style="padding:12px;display:none">Tidak ada post lagi.</div>
+  </main>
+
+  <div id="modalRoot"></div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(err => {
+        console.warn('SW register failed:', err);
+      });
+    }
+    // Script otentikasi tidak lagi diperlukan di sini
+  </script>
+</body>
+</html>

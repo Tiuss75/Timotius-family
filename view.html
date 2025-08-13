@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Memuat Postingan...">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="Deskripsi singkat akan muncul di sini.">
+    <meta property="og:image" content="logo.png">
+    
+    <title>Memuat Postingan...</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <div id="post-view" class="view-container" style="display: none;">
+        </div>
+    <div id="message" class="loading">Memuat...</div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script>
+        // Letakkan JavaScript spesifik untuk view.html di sini
+        // (Kode initView() yang sudah kita buat sebelumnya)
+        async function initView() {
+            // ... kode lengkap initView()
+        }
+        document.addEventListener('DOMContentLoaded', initView);
+    </script>
+</body>
+</html>
